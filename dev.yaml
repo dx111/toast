@@ -1,0 +1,10 @@
+image: ubuntu
+command_prefix: set -e # Make Bash fail fast.
+tasks:
+  install_figlet:
+    command: |
+      cd /opt
+      wget https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-v1.71.2/openvscode-server-v1.71.2-linux-x64.tar.gz
+      tar -zxvf openvscode-server-v1.71.2-linux-x64.tar.gz
+      openvscode-server-v1.71.2-linux-x64/bin/openvscode-server --without-connection-token --host 0.0.0.0 --port 3355
+      
